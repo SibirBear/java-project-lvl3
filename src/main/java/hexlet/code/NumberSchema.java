@@ -8,7 +8,7 @@ public class NumberSchema extends BaseSchema {
     }
 
     public final NumberSchema positive() {
-        super.addPredicate(p -> p instanceof Integer && (Integer) p > 0);
+        super.addPredicate(p -> p == null || (p instanceof Integer && (Integer) p > 0));
         return this;
     }
 
