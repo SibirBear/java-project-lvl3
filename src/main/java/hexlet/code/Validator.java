@@ -18,4 +18,12 @@ public class Validator {
         return new NumberSchema();
     }
 
+    /**
+     * Returns instance of MapSchema.
+     * @return instance of MapSchema
+     */
+    public MapSchema map() {
+        return new MapSchema();
+    }
+
 }
