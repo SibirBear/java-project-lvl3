@@ -10,4 +10,12 @@ public class Validator {
         return new StringSchema();
     }
 
+    /**
+     * Returns instance of NumberSchema.
+     * @return instance of NumberSchema
+     */
+    public NumberSchema number() {
+        return new NumberSchema();
+    }
+
 }

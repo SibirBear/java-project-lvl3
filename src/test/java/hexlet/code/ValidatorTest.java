@@ -31,4 +31,31 @@ public class ValidatorTest {
 
         assertFalse(schema.isValid("what does the fox say")); // false
     }
+
+    @Test
+    void testNumberSchema() {
+        final Validator v = new Validator();
+        NumberSchema schema = v.number();
+        final int ten = 10;
+        final int five = 5;
+
+        assertTrue(schema.isValid(null)); // true
+
+        schema.required();
+
+        assertFalse(schema.isValid(null)); // false
+        assertTrue(schema.isValid(ten)); // true
+        assertFalse(schema.isValid("5")); // false
+
+        schema.positive();
+        assertTrue(schema.isValid(ten)); // true
+        assertFalse(schema.isValid(-ten)); // false
+
+        schema.range(five, ten);
+
+        assertTrue(schema.isValid(five)); // true
+        assertTrue(schema.isValid(ten)); // true
+        assertFalse(schema.isValid(five - 1)); // false
+        assertFalse(schema.isValid(ten + 1)); // false
+    }
 }
