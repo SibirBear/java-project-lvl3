@@ -14,7 +14,7 @@ A data validator is a library with which you can check the correctness of any da
 The library interface for validation is a vivid example of DSL, a specialized language that allows you to declaratively (descriptively) describe what you want from the code. Code written in this style is much easier to read than working with direct object creation. In many ways, this approach is based on the fluent interface pattern.
 
 ### Usage example:
-```
+```java
 Validator v = new Validator();
 
 // strings
